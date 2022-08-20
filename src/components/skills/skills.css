@@ -5,7 +5,7 @@
   margin-bottom: 3rem;
   place-items: center;
   opacity: 0;
-  animation: fadeInUp 2s 1.5s forwards;
+  animation: fadeInUp 2s 0s forwards;
 }
 
 .skill {

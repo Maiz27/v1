@@ -2,7 +2,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  animation: fadeInUp 2s 1.5s forwards;
+  opacity: 0;
+  animation: fadeInUp 1.5s 0.5s forwards;
 }
 
 .job {
