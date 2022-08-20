@@ -26,6 +26,7 @@ nav {
 
 ul {
   height: max-content;
+  list-style: none;
 }
 
 .last {
@@ -46,7 +47,6 @@ ul {
   padding: 0.5rem;
   cursor: pointer;
   margin-right: 5rem;
-  list-style: none;
 
   /* font-size: 1.6rem; */
 }
