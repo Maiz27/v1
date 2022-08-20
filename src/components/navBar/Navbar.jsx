@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
-import LOGO from "../../assets/imgs/2.png";
+import LOGO from "../../assets/imgs/logo.png";
 import "./navbar.css";
 
 export const Navbar = ({ active }) => {

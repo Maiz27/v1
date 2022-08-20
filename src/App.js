@@ -27,7 +27,7 @@ export const App = () => {
           path="/projects"
           element={<Projects setActive={setActiveNav} />}
         />
-        <Route path="/project/:projectId" element={<Projects />} />
+        {/* <Route path="/project/:projectId" element={<Projects />} /> */}
       </Routes>
     </>
   );
