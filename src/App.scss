@@ -1,0 +1,25 @@
+@import "animate.css";
+
+@font-face {
+  font-family: "Lobster Regular";
+  src: url("./assets/Fonts/Lobster/Lobster-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Roboto Condensed";
+  src: url("./assets/Fonts/Roboto_Condensed/RobotoCondensed-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Roboto Mono";
+  src: url("./assets/Fonts/Roboto_Mono/RobotoMono-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: "Roboto Italic";
+  src: url("./assets/Fonts/Roboto_Mono/RobotoMono-Italic-VariableFont_wght.ttf");
+}
+
+input,
+textarea {
+  font-family: "Roboto Condensed";
+}

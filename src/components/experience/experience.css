@@ -1,0 +1,78 @@
+.experience-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeInUp 2s 1.5s forwards;
+}
+
+.job {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 3rem;
+}
+
+.job-time-location {
+  width: 20%;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.job-time {
+  display: flex;
+  justify-content: space-evenly;
+  color: var(--accent-1);
+}
+
+.job-details {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.job-details > h2 {
+  font-family: "lobster";
+  font-size: 2rem;
+}
+
+.job-details > h3 {
+  font-size: 1.2rem;
+  margin-top: -1rem;
+  color: var(--accent-1);
+}
+
+.job-details > h3 > sup {
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
+
+.job-details > p {
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  text-align: justify;
+}
+
+@media screen and (max-width: 768px) {
+  .job-time-location {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .job {
+    width: 90%;
+    flex-direction: column;
+  }
+  .job-time-location {
+    width: 100%;
+  }
+  .job-details {
+    width: 100%;
+    align-items: center;
+    margin-top: 1rem;
+  }
+}

@@ -1,0 +1,68 @@
+.socials-container {
+  background: rgba(0, 0, 0, 0.3);
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.7rem 1.7rem;
+  border-radius: 3rem;
+  backdrop-filter: blur(15px);
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  /* opacity: 0;
+  animation: fadeInUp 1s 2s forwards; */
+}
+
+.socials-container a {
+  background: transparent;
+  padding: 0.9rem;
+  border-radius: 50%;
+  border-color: var(--accent-1);
+  display: flex;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+.socials-container a:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.linkedIn:hover {
+  color: #0a66c2;
+}
+
+.github:hover {
+  color: #2f3038;
+}
+
+.stack:hover {
+  color: #f58025;
+}
+
+.twitter:hover {
+  color: #1da1f2;
+}
+
+.gram:hover {
+  color: #e4405f;
+}
+
+@media screen and (min-width: 1440px) {
+  .socials-container a {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .socials-container {
+    bottom: 0rem;
+    width: 80%;
+    position: relative;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+  }
+
+  .socials-container a {
+    font-size: 2.5rem;
+  }
+}
