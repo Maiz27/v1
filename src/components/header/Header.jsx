@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { AnimatedLetters } from "../../components/animatedLetters/AnimatedLetters";
-import img from "../../assets/imgs/home.gif";
+import { Socials } from "../socials/Socials";
 import "./header.css";
 
-export const Header = ({ letterClass, contactRef }) => {
+export const Header = ({ contactRef }) => {
+  const [letterClass, setLetterClass] = useState("text-animate");
+
   const nameArray = [
     "M",
     "a",
@@ -39,30 +41,38 @@ export const Header = ({ letterClass, contactRef }) => {
     "r",
   ];
 
+  useEffect(() => {
+    setTimeout(() => {
+      setLetterClass("text-animate-hover");
+    }, 4800);
+  }, []);
+
   return (
     <div className="header-container">
       <div className="text-zone">
         <h1>
           <span className={letterClass}>H</span>
-          <span className={`${letterClass} _12`}>i,</span>
+          <span className={`${letterClass} _11`}>i,</span>
           <br />
-          <span className={`${letterClass} _13`}>I</span>
-          <span className={`${letterClass} _14`}>'m</span>
+          <span className={`${letterClass} _12`}>I</span>
+          <span className={`${letterClass} _13`}>'m</span>
           &nbsp;
           <AnimatedLetters
             letterClass={letterClass}
             strArray={nameArray}
-            idx={15}
+            idx={14}
           />
           <br />
           <AnimatedLetters
             letterClass={letterClass}
             strArray={jobArray}
-            idx={32}
+            idx={27}
           />
         </h1>
 
         <h2>React Developer / Flutter Developer</h2>
+
+        <Socials />
 
         <button
           onClick={() =>
@@ -72,13 +82,11 @@ export const Header = ({ letterClass, contactRef }) => {
               inline: "start",
             })
           }
-          className="btn text-animate _44"
+          className="btn text-animate _47"
         >
           Contact Me
         </button>
       </div>
-
-      <img src={img} alt="svg" className="gif" />
     </div>
   );
 };

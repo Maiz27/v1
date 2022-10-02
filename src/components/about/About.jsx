@@ -1,22 +1,16 @@
-import React, { useState, useEffect } from "react";
-import { Outlet, Link, useLocation } from "react-router-dom";
-import Socials from "../../components/socials/Socials";
+import React, { useState } from "react";
 import IMG from "../../assets/imgs/me2.jpg";
 import CV from "../../assets/Maged's Resume.pdf";
+import { Education } from "../education/Education";
+import { Experience } from "../experience/Experience";
+import { Skills } from "../skills/Skills";
 import "./about.css";
 
-export const About = ({ setActive }) => {
-  const location = useLocation();
+export const About = ({ myExperience }) => {
   const [current, setCurrent] = useState("skills");
 
-  useEffect(() => {
-    setActive("about");
-    setCurrent(location.pathname);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   return (
-    <section>
+    <>
       <div className="about-container">
         <div className="pic-container">
           <img loading="eager" src={IMG} alt="Maged" />
@@ -42,47 +36,38 @@ export const About = ({ setActive }) => {
         </div>
       </div>
 
-      <div className="center">
-        <Socials />
-      </div>
-
       <div className="menu">
-        <Link
-          to="skills"
-          onClick={() => setCurrent("/about/skills")}
+        <div
+          onClick={() => setCurrent("skills")}
           className={
-            current === "/about/skills" ? "menu-item menu-active" : "menu-item"
+            current === "skills" ? "menu-item menu-active" : "menu-item"
           }
         >
           Skill Set
-        </Link>
-        <Link
-          to="experience"
-          onClick={() => setCurrent("/about/experience")}
+        </div>
+        <div
+          onClick={() => setCurrent("experience")}
           className={
-            current === "/about/experience"
-              ? "menu-item menu-active"
-              : "menu-item"
+            current === "experience" ? "menu-item menu-active" : "menu-item"
           }
         >
           Experience
-        </Link>
-        <Link
-          to="education"
-          onClick={() => setCurrent("/about/education")}
+        </div>
+        <div
+          onClick={() => setCurrent("education")}
           className={
-            current === "/about/education"
-              ? "menu-item menu-active"
-              : "menu-item"
+            current === "education" ? "menu-item menu-active" : "menu-item"
           }
         >
           Education
-        </Link>
+        </div>
       </div>
 
       <div>
-        <Outlet />
+        {current === "skills" && <Skills />}
+        {current === "experience" && <Experience myExperience={myExperience} />}
+        {current === "education" && <Education />}
       </div>
-    </section>
+    </>
   );
 };
