@@ -1,34 +1,97 @@
-import React, { useState } from "react";
-import "./App.scss";
-import { Routes, Route } from "react-router-dom";
-import { Home } from "./pages/home/Home";
-import { Projects } from "./pages/projects/Projects";
-import { About } from "./pages/about/About";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { Navbar } from "./components/navBar/Navbar";
-import { Skills } from "./components/skills/Skills";
-import { Experience } from "./components/experience/Experience";
-import { Education } from "./components/education/Education";
+import { Header } from "./components/header/Header";
+import { Contact } from "./components/contact/Contact";
+import { About } from "./components/about/About";
+import { Projects } from "./components/projects/Projects";
+import { Splash } from "./components/splash/Splash";
+
+import { getInfo, getExperience, getProjects } from "./db/queries";
+import "./App.scss";
 
 export const App = () => {
-  const [activeNav, setActiveNav] = useState("home");
+  const [isLoading, setIsLoading] = useState(true);
+  const [myInfo, setMyInfo] = useState(null);
+  const [myProjects, setMyProjects] = useState([]);
+  const [myExperience, setMyExperience] = useState([]);
+
+  useEffect(() => {
+    getInfo().then((info) => {
+      setMyInfo(info);
+      getProjects().then((projects) => {
+        setMyProjects(projects);
+        getExperience().then((experiences) => {
+          setMyExperience(experiences);
+          setIsLoading(false);
+        });
+      });
+    });
+  }, []);
+
+  const contactRef = useRef(null);
+  const headerRef = useRef(null);
+  const aboutRef = useRef(null);
+  const projectsRef = useRef(null);
+  const [myEntries, setMyEntries] = useState([]);
+
+  useEffect(() => {
+    if (contactRef.current) {
+      let list = [headerRef, aboutRef, projectsRef, contactRef];
+      setMyEntries(list);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isLoading]);
+
+  useEffect(() => {
+    const options = {
+      threshold: 0.25,
+    };
+    const observer = new IntersectionObserver(onVisibilityChanged, options);
+
+    myEntries.forEach((el) => observer.observe(el?.current));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [myEntries]);
+
+  const onVisibilityChanged = useCallback((entries) => {
+    entries.forEach((entry) => {
+      // console.log(entry);
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      } else {
+        entry.target.classList.remove("show");
+      }
+    });
+  }, []);
 
   return (
     <>
-      <Navbar active={activeNav} />
+      {!isLoading && <Navbar contactRef={contactRef} />}
 
-      <Routes>
-        <Route path="/" element={<Home setActive={setActiveNav} />} />
-        <Route path="/about" element={<About setActive={setActiveNav} />}>
-          <Route path="skills" element={<Skills />} />
-          <Route path="experience" element={<Experience />} />
-          <Route path="education" element={<Education />} />
-        </Route>
-        <Route
-          path="/projects"
-          element={<Projects setActive={setActiveNav} />}
-        />
-        {/* <Route path="/project/:projectId" element={<Projects />} /> */}
-      </Routes>
+      <>
+        {isLoading ? (
+          <section>
+            <Splash />
+          </section>
+        ) : (
+          <>
+            <section className="hidden" ref={headerRef}>
+              <Header contactRef={contactRef} />
+            </section>
+
+            <section className="hidden" ref={aboutRef}>
+              <About myExperience={myExperience} />
+            </section>
+
+            <section className="hidden" ref={projectsRef}>
+              <Projects myProjects={myProjects} />
+            </section>
+
+            <section ref={contactRef} className="hidden">
+              <Contact myInfo={myInfo} />
+            </section>
+          </>
+        )}
+      </>
     </>
   );
 };

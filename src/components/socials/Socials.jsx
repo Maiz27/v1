@@ -1,14 +1,8 @@
 import React from "react";
 import "./socials.css";
-import {
-  SiLinkedin,
-  SiGithub,
-  // SiStackoverflow,
-  SiTwitter,
-  SiInstagram,
-} from "react-icons/si";
+import { SiLinkedin, SiGithub, SiTwitter, SiInstagram } from "react-icons/si";
 
-const Socials = () => {
+export const Socials = () => {
   return (
     <div className="socials-container">
       <a
@@ -28,15 +22,6 @@ const Socials = () => {
       >
         <SiGithub />
       </a>
-
-      {/* <a
-        className="stack"
-        href="https://www.stackoverflow.com/users/12064543"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <SiStackoverflow />
-      </a> */}
 
       <a
         className="twitter"
@@ -58,5 +43,3 @@ const Socials = () => {
     </div>
   );
 };
-
-export default Socials;

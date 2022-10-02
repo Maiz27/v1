@@ -5,7 +5,7 @@ import { HiOutlineMail, HiOutlineLocationMarker } from "react-icons/hi";
 import IMG from "../../assets/imgs/contact.gif";
 import "./contact.scss";
 
-export const Contact = ({ contactRef }) => {
+export const Contact = ({ myInfo }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [number, setNumber] = useState("");
@@ -70,27 +70,27 @@ export const Contact = ({ contactRef }) => {
   };
 
   return (
-    <section ref={contactRef}>
+    <div>
       {/* Using dummy class to show more of the component on Scroll (useRef) */}
       <div className="dummy">----------------------------</div>
 
       <div className="contact-container">
         <div className="contact-options-container">
           <div className="contact-option">
-            <FiHeadphones className="options-icon" />
+            <FiHeadphones className="options-icon nd" />
             <h3>Phone Numbers</h3>
-            <a href={`tel:+249128569096`}>+249-128-569-096</a>
+            <a href={`tel:${myInfo.tele}`}>+211-919-142-423</a>
           </div>
 
-          <div className="contact-option">
-            <HiOutlineMail className="options-icon" />
+          <div className="contact-option nd">
+            <HiOutlineMail className="options-icon " />
             <h3>Email Addresses</h3>
-            <a href={`mailto:magedfaiz98@gmail.com`}>Magedfaiz98@gmail.com</a>
+            <a href={`mailto:${myInfo.email}`}>{myInfo.email}</a>
           </div>
           <div className="contact-option">
             <HiOutlineLocationMarker className="options-icon" />
             <h3>Location</h3>
-            <p>Khartoum, Sudan</p>
+            <p>{myInfo.location}</p>
           </div>
         </div>
 
@@ -140,11 +140,11 @@ export const Contact = ({ contactRef }) => {
             {result && <p>{result}</p>}
 
             <button type="submit" className="btn">
-              Submit
+              Send Message
             </button>
           </form>
         </div>
       </div>
-    </section>
+    </div>
   );
 };

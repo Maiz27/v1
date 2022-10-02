@@ -5,7 +5,7 @@
   margin-bottom: 3rem;
   place-items: center;
   opacity: 0;
-  animation: fadeInUp 2s 0s forwards;
+  animation: fadeInUp 1.5s 0.3s forwards;
 }
 
 .skill {
@@ -51,7 +51,7 @@
   color: #3975a5;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 426px) {
   .skills-container {
     grid-template-columns: repeat(1, 1fr);
   }

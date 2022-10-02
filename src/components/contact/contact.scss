@@ -13,17 +13,19 @@
   opacity: 0;
   animation: fadeIn 3s forwards;
   animation-delay: 5s;
+  width: 80vw;
 }
 
 .contact-options-container {
   display: flex;
   justify-content: space-around;
   margin-bottom: 5rem;
+  width: 100%;
 }
 
 .contact-option {
   position: relative;
-  width: 25rem;
+  width: 25%;
   border: 1px solid var(--primary-color);
   border-radius: 10px;
   padding: 3rem;
@@ -97,9 +99,9 @@ form {
   }
 }
 
-@media screen and (max-width: 1024px) {
-  .contact-option {
-    width: 22rem;
+@media screen and (min-width: 1440px) {
+  .contact-container {
+    width: 60vw;
   }
 }
 
@@ -127,7 +129,7 @@ form {
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 426px) {
   .contact-options-container,
   .form-container {
     flex-direction: column;

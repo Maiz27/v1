@@ -1,15 +1,14 @@
 .socials-container {
   background: rgba(0, 0, 0, 0.3);
-  width: 30%;
+  width: 70%;
   display: flex;
   justify-content: space-between;
   padding: 0.7rem 1.7rem;
   border-radius: 3rem;
   backdrop-filter: blur(15px);
-  margin-top: 5rem;
-  margin-bottom: 5rem;
-  /* opacity: 0;
-  animation: fadeInUp 1s 2s forwards; */
+  margin: 5rem auto;
+  opacity: 0;
+  animation: fadeInUp 1s 4.4s forwards;
 }
 
 .socials-container a {
@@ -47,13 +46,28 @@
   color: #e4405f;
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (max-width: 1440px) {
   .socials-container a {
     font-size: 3rem;
   }
+
+  .socials-container {
+    width: 45%;
+  }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 768px) {
+  .socials-container {
+    width: 60%;
+    height: 4rem;
+  }
+
+  .socials-container a {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 426px) {
   .socials-container {
     bottom: 0rem;
     width: 80%;

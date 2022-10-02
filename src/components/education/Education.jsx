@@ -19,7 +19,7 @@ export const Education = () => {
     <div className="experience-container">
       {list.map((education) => {
         return (
-          <div key={education.id} className="job">
+          <div key={education.id} className="job ed">
             <div className="job-time-location">
               <div className="job-time">
                 <p>

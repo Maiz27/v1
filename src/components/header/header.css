@@ -7,19 +7,13 @@
 }
 
 .text-zone {
-  width: 50%;
+  width: 100%;
   margin-top: 8rem;
   cursor: default;
-}
-
-.gif {
-  width: 35%;
-  margin-top: 5rem;
-  margin-right: 5rem;
+  text-align: center;
 }
 
 .text-zone h1 {
-  text-align: left;
   font-size: 6rem;
   margin: 0;
   font-family: "Lobster";
@@ -33,20 +27,17 @@
   font-size: 2rem;
   font-family: "Roboto Condensed";
   letter-spacing: 2px;
-  animation: fadeIn 1s 1.8s backwards;
+  animation: fadeIn 1s 4s backwards;
   opacity: 0.6;
 }
 
 @media screen and (max-width: 1024px) {
   .header-container {
     margin-top: 3rem;
+    width: 100%;
   }
   .text-zone {
     margin-top: 4rem;
-  }
-
-  .gif {
-    margin-top: 1.5rem;
   }
 
   .text-zone h1 {
@@ -60,6 +51,10 @@
 }
 
 @media screen and (max-width: 768px) {
+  .header-container {
+    width: 90%;
+  }
+
   .text-zone {
     margin-top: 2rem;
   }
@@ -80,14 +75,9 @@
     margin-left: 3rem;
     margin-right: 3rem;
   }
-
-  .gif {
-    margin-right: 1rem;
-    width: 45%;
-  }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 426px) {
   .header-container {
     flex-direction: column;
     justify-content: flex-start;
@@ -96,12 +86,6 @@
 
   .text-zone {
     width: 100%;
-  }
-
-  .gif {
-    width: 28rem;
-    padding-top: 4rem;
-    margin: auto;
   }
 
   .text-zone h1 {
