@@ -1,5 +1,5 @@
-# React Portfolio
+# React Portfolio Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Built with React using Sass, AnimateCss and Intersection Observer Api
 
-# Personal Portfolio website
+Live ==> https://maged-faiz.web.app
