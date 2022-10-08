@@ -58,7 +58,9 @@ export const App = () => {
       if (entry.isIntersecting) {
         entry.target.classList.add("show");
       } else {
-        entry.target.classList.remove("show");
+        if (entry.target.classList[1] !== "contact") {
+          entry.target.classList.remove("show");
+        }
       }
     });
   }, []);
@@ -78,7 +80,7 @@ export const App = () => {
               <Header contactRef={contactRef} />
             </section>
 
-            <section className="hidden" ref={aboutRef}>
+            <section className="hidden about" ref={aboutRef}>
               <About myExperience={myExperience} />
             </section>
 
@@ -86,9 +88,16 @@ export const App = () => {
               <Projects myProjects={myProjects} />
             </section>
 
-            <section ref={contactRef} className="hidden">
+            <section ref={contactRef} className="hidden contact">
               <Contact myInfo={myInfo} />
             </section>
+
+            <div className="copy-right">
+              <p>
+                <span id="copy">&copy;</span>
+                Copyright {new Date().getFullYear()} Maged
+              </p>
+            </div>
           </>
         )}
       </>
