@@ -1,24 +1,22 @@
-import React, { useState } from "react";
-import IMG from "../../assets/imgs/me2.jpg";
-import CV from "../../assets/Maged's Resume.pdf";
-import { Education } from "../education/Education";
-import { Experience } from "../experience/Experience";
-import { Skills } from "../skills/Skills";
-import "./about.css";
+import React, { useState } from 'react';
+import { Education } from '../education/Education';
+import { Experience } from '../experience/Experience';
+import { Skills } from '../skills/Skills';
+import './about.css';
 
-export const About = ({ myExperience }) => {
-  const [current, setCurrent] = useState("skills");
+export const About = ({ myExperience, cover, cv }) => {
+  const [current, setCurrent] = useState('skills');
 
   return (
     <>
-      <div className="about-container">
-        <div className="pic-container">
-          <img loading="eager" src={IMG} alt="Maged" />
+      <div className='about-container'>
+        <div className='pic-container'>
+          <img loading='lazy' src={cover} alt='Maged' />
         </div>
 
-        <div className="about-text">
-          <div className="about-header">
-            <h1 className="title">About Me</h1>
+        <div className='about-text'>
+          <div className='about-header'>
+            <h1 className='title'>About Me</h1>
           </div>
           <p>
             I'm Maged, a recent graduate on the lookout for new opportunities to
@@ -30,33 +28,33 @@ export const About = ({ myExperience }) => {
             music or playing games
           </p>
 
-          <a href={CV} download="Maged's Resume.pdf" className="btn">
+          <a href={cv} download="Maged's Resume.pdf" className='btn'>
             Download CV
           </a>
         </div>
       </div>
 
-      <div className="menu">
+      <div className='menu'>
         <div
-          onClick={() => setCurrent("skills")}
+          onClick={() => setCurrent('skills')}
           className={
-            current === "skills" ? "menu-item menu-active" : "menu-item"
+            current === 'skills' ? 'menu-item menu-active' : 'menu-item'
           }
         >
           Skill Set
         </div>
         <div
-          onClick={() => setCurrent("experience")}
+          onClick={() => setCurrent('experience')}
           className={
-            current === "experience" ? "menu-item menu-active" : "menu-item"
+            current === 'experience' ? 'menu-item menu-active' : 'menu-item'
           }
         >
           Experience
         </div>
         <div
-          onClick={() => setCurrent("education")}
+          onClick={() => setCurrent('education')}
           className={
-            current === "education" ? "menu-item menu-active" : "menu-item"
+            current === 'education' ? 'menu-item menu-active' : 'menu-item'
           }
         >
           Education
@@ -64,9 +62,9 @@ export const About = ({ myExperience }) => {
       </div>
 
       <div>
-        {current === "skills" && <Skills />}
-        {current === "experience" && <Experience myExperience={myExperience} />}
-        {current === "education" && <Education />}
+        {current === 'skills' && <Skills />}
+        {current === 'experience' && <Experience myExperience={myExperience} />}
+        {current === 'education' && <Education />}
       </div>
     </>
   );

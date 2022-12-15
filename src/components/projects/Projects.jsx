@@ -1,13 +1,13 @@
-import React from "react";
-import { ProjectItem } from "../projectItem/ProjectItem";
-import "./projects.css";
+import React from 'react';
+import { ProjectItem } from '../projectItem/ProjectItem';
+import './projects.css';
 
 export const Projects = ({ myProjects }) => {
   return (
-    <div className="projects-section">
+    <div className='projects-section'>
       <h1>My Recent Works</h1>
 
-      <div className="projects-container">
+      <div className='projects-container'>
         {myProjects.map((project) => {
           return (
             <ProjectItem
@@ -20,6 +20,7 @@ export const Projects = ({ myProjects }) => {
               details={project.details}
               github={project.github}
               demo={project.demo}
+              isActive={project.isActive}
             />
           );
         })}

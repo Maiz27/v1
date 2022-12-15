@@ -1,13 +1,13 @@
-import React, { useState, useEffect, useRef, useCallback } from "react";
-import { Navbar } from "./components/navBar/Navbar";
-import { Header } from "./components/header/Header";
-import { Contact } from "./components/contact/Contact";
-import { About } from "./components/about/About";
-import { Projects } from "./components/projects/Projects";
-import { Splash } from "./components/splash/Splash";
+import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { Navbar } from './components/navBar/Navbar';
+import { Header } from './components/header/Header';
+import { Contact } from './components/contact/Contact';
+import { About } from './components/about/About';
+import { Projects } from './components/projects/Projects';
+import { Splash } from './components/splash/Splash';
 
-import { getInfo, getExperience, getProjects } from "./db/queries";
-import "./App.scss";
+import { getInfo, getExperience, getProjects } from './db/queries';
+import './App.scss';
 
 export const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -56,9 +56,9 @@ export const App = () => {
     entries.forEach((entry) => {
       // console.log(entry);
       if (entry.isIntersecting) {
-        entry.target.classList.add("show");
+        entry.target.classList.add('show');
       } else {
-        entry.target.classList.remove("show");
+        entry.target.classList.remove('show');
       }
     });
   }, []);
@@ -74,19 +74,23 @@ export const App = () => {
           </section>
         ) : (
           <>
-            <section className="hidden" ref={headerRef}>
+            <section className='hidden' ref={headerRef}>
               <Header contactRef={contactRef} />
             </section>
 
-            <section className="hidden" ref={aboutRef}>
-              <About myExperience={myExperience} />
+            <section className='hidden' ref={aboutRef}>
+              <About
+                myExperience={myExperience}
+                cover={myInfo.cover}
+                cv={myInfo.cv}
+              />
             </section>
 
-            <section className="hidden" ref={projectsRef}>
+            <section className='hidden' ref={projectsRef}>
               <Projects myProjects={myProjects} />
             </section>
 
-            <section ref={contactRef} className="hidden">
+            <section ref={contactRef} className='hidden'>
               <Contact myInfo={myInfo} />
             </section>
           </>

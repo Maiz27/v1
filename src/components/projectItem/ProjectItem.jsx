@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useCallback } from "react";
+import React, { useRef, useEffect, useCallback } from 'react';
 
 export const ProjectItem = ({
   isMobile,
@@ -9,6 +9,7 @@ export const ProjectItem = ({
   details,
   github,
   demo,
+  isActive,
 }) => {
   const projectRef = useRef(null);
 
@@ -25,43 +26,46 @@ export const ProjectItem = ({
 
   const onVisibilityChanged = useCallback(([entry]) => {
     if (entry.isIntersecting) {
-      entry.target.classList.add("show");
+      entry.target.classList.add('show');
     } else {
-      entry.target.classList.remove("show");
+      entry.target.classList.remove('show');
     }
   }, []);
 
   return (
-    <div ref={projectRef} className="project hidden">
-      <div className="project-img-container">
-        <img
-          className={isMobile ? "img-mobile" : "img-pc"}
-          src={cover}
-          alt={title}
-        />
-      </div>
+    isActive && (
+      <div ref={projectRef} className='project hidden'>
+        <div className='project-img-container'>
+          <img
+            className={isMobile ? 'img-mobile' : 'img-pc'}
+            src={cover}
+            alt={title}
+            loading='lazy'
+          />
+        </div>
 
-      <div className="project-desc">
-        <h2>{title}</h2>
-        <h3>{sub}</h3>
-        <h3 className={isComplete ? "com" : "dev"}>
-          {isComplete ? "Complete" : "Under-development"}
-        </h3>
-        <p>{details}</p>
+        <div className='project-desc'>
+          <h2>{title}</h2>
+          <h3>{sub}</h3>
+          <h3 className={isComplete ? 'com' : 'dev'}>
+            {isComplete ? 'Complete' : 'Under-development'}
+          </h3>
+          <p>{details}</p>
 
-        <div className="project-btns">
-          {github && (
-            <a className="btn" href={github} target="_blank" rel="noreferrer">
-              Github
-            </a>
-          )}
-          {demo && (
-            <a className="btn" href={demo} target="_blank" rel="noreferrer">
-              Demo
-            </a>
-          )}
+          <div className='project-btns'>
+            {github && (
+              <a className='btn' href={github} target='_blank' rel='noreferrer'>
+                Github
+              </a>
+            )}
+            {demo && (
+              <a className='btn' href={demo} target='_blank' rel='noreferrer'>
+                Demo
+              </a>
+            )}
+          </div>
         </div>
       </div>
-    </div>
+    )
   );
 };

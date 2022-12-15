@@ -6,9 +6,9 @@
   opacity: 0;
 }
 
-.ed {
-  min-width: 100%;
- }
+.block {
+  display: block;
+}
 
 .job {
   min-width: 70%;
@@ -40,7 +40,7 @@
 }
 
 .job-details > h2 {
-  font-family: "lobster";
+  font-family: 'lobster';
   font-size: 2rem;
 }
 
