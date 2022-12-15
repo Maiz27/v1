@@ -25,7 +25,7 @@ export const About = ({ myExperience, cover, cv }) => {
             JavaScript framework because there's always a new one!
             <br />
             <br />I spend my free time with family and friends, listening to
-            music or playing games
+            music or playing games.
           </p>
 
           <a href={cv} download="Maged's Resume.pdf" className='btn'>

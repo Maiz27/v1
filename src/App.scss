@@ -23,3 +23,17 @@ input,
 textarea {
   font-family: "Roboto Condensed";
 }
+
+.copy-right {
+  margin-top: 5rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  background-color: var(--accent-1);
+}
+
+#copy {
+  font-size: larger;
+}
