@@ -35,7 +35,7 @@ To get a local copy up and running follow these simple example steps.
 1. Clone the repo
 
 ```sh
-git clone https://github.com/Maiz27/portfolio.git
+git clone https://github.com/Maiz27/v1.git
 ```
 
 2. Install NPM packages
@@ -56,5 +56,5 @@ npm run start
 
 ## License
 
-Distributed under the MIT License. See [LICENSE](https://github.com/Maiz27/portfolio/blob/master/LICENSE) for more information.
+Distributed under the MIT License. See [LICENSE](https://github.com/Maiz27/v1/blob/master/LICENSE) for more information.
 
